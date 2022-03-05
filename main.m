@@ -9,6 +9,8 @@ varargin={mat};
 
 [E V]=solve(model,varargin);
 
+E
+
 figure(1)
 plot(mat.x,mat.V,mat.x,ones(length(mat.x),1)*E(1:5)'+V(:,1:5))
 

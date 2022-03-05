@@ -34,15 +34,9 @@ switch structure,
         Lbarrier_right=6;
         Lside_right=20;
         
-        mbarrier=0.1;
-        mqw=0.065;
         
-        Vbarrier=0.3;
-        Vqw=0;
         
         L=[Lside_left Lbarrier_left Lqw Lbarrier_right Lside_right];
-        m=[mbarrier mqw mbarrier mqw mbarrier];
-        V=[Vbarrier Vqw Vbarrier Vqw Vbarrier];
         
     case 'rtd',
         

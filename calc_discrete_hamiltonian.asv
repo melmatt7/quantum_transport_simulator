@@ -31,6 +31,6 @@ MG(1,2)=-hbar.^2*mdiff1/(2*mo*m(1)*m(2)*dx^2);
 
 dx=x(Nx)-x(Nx-1);
 mdiffN = m(Nx)-m(Nx-1);
-MG(Nx,Nx)=-hbar.^2*mdiffN/(2*mo*m(Nx)*m(Nx-1)*dx^2);
-MG(Nx,Nx-1)=hbar.^2*mdiffN/(2*mo*m(Nx)*m(Nx-1)*dx^2);
+MG(Nx,Nx)=-hbar.^2/(2*mo*mdiffN*dx^2);
+MG(Nx,Nx-1)=hbar.^2/(2*mo*mdiffN*dx^2);
 
