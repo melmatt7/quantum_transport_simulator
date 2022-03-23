@@ -16,21 +16,18 @@ for I=2:Nx-1,
     dxp=x(I+1)-x(I);
     dxm=x(I)-x(I-1);
     dxpm = dxm+dxp;
-    mdiff = (m(I)-m(I-1));
     
-    MG(I,I-1)=hbar.^2*mdiff/(2*mo*m(I)*m(I-1)*dxpm*dxm) + 1/(m(I)*dxpm*dxm);
-    MG(I,I+1)=-hbar.^2*mdiff/(2*mo*m(I)*m(I-1)*dxpm*dxm) + 1/(m(I)*dxpm*dxp);
-    MG(I,I)=hbar.^2/(mo*m(I)*(dxpm));
+    MG(I,I-1)=-T0*2/(dxpm*(m(I)+m(I-1))*dxm);
+    MG(I,I+1)=-T0*2/(dxpm*(m(I+1)+m(I))*dxp);
+    MG(I,I)=-MG(I,I-1)-MG(I,I+1)+V_pot(I);
     
 end
 
 dx=x(2)-x(1);
-mdiff1 = m(2)-m(1);
-MG(1,1)=hbar.^2*mdiff1/(2*mo*m(1)*m(2)*dx^2);
-MG(1,2)=-hbar.^2*mdiff1/(2*mo*m(1)*m(2)*dx^2);
+MG(1,1)=T0/(dx.^2*m(1))+V_pot(1);
+MG(1,2)=-T0/(2*dx.^2*m(1));
 
 dx=x(Nx)-x(Nx-1);
-mdiffN = m(Nx)-m(Nx-1);
-MG(Nx,Nx)=-hbar.^2*mdiffN/(2*mo*m(Nx)*m(Nx-1)*dx^2);
-MG(Nx,Nx-1)=hbar.^2*mdiffN/(2*mo*m(Nx)*m(Nx-1)*dx^2);
+MG(Nx,Nx)=T0/(dx.^2*m(Nx))+V_pot(Nx);
+MG(Nx,Nx-1)=-T0/(2*dx.^2*m(Nx));
 

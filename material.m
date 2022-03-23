@@ -17,7 +17,7 @@ switch structure,
         mbarrier=0.1;
         mqw=0.065;
 
-        Vbarrier=0.3;
+        Vbarrier=30;
         Vqw=0;
 
         L=[Lbarrier_left Lqw Lbarrier_right];
@@ -29,9 +29,9 @@ switch structure,
         dx = 0.1;
         
         Lside_left=20;
-        Lbarrier_left=5;
-        Lqw=4;
-        Lbarrier_right=6;
+        Lqw=5;
+        mid=4;
+        Rqw=6
         Lside_right=20;
         
         mbarrier=0.1;
@@ -40,7 +40,7 @@ switch structure,
         Vbarrier=0.3;
         Vqw=0;
         
-        L=[Lside_left Lbarrier_left Lqw Lbarrier_right Lside_right];
+        L=[Lside_left Lqw mid Rqw Lside_right];
         m=[mbarrier mqw mbarrier mqw mbarrier];
         V=[Vbarrier Vqw Vbarrier Vqw Vbarrier];
         
